@@ -1,8 +1,8 @@
-package santaClausVillage;
+package santavillage.characters;
 
-public class Creature extends Character {
+public class Humanoid extends Character {
 
-	public Creature() {
+	public Humanoid() {
 		// TODO Auto-generated constructor stub
 	}
 
