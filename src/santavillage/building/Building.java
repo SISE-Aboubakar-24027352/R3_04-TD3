@@ -3,6 +3,7 @@ package santavillage.building;
 import santavillage.exception.CapacityExceededException;
 import santavillage.building.Cleanliness;
 import santavillage.characters.Character;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -20,11 +21,11 @@ public abstract class Building {
         this.presentCharacters = new ArrayList<>();
     }
 
-    public double getArea(){
+    public double getArea() {
         return area;
     }
 
-    public int getCapacity(){
+    public int getCapacity() {
         return capacity;
     }
 
@@ -36,11 +37,11 @@ public abstract class Building {
         System.out.println(character.getName() + " est entré dans le bâtiment.");
     }
 
-    public boolean withdraw(Character character){
+    public boolean withdraw(Character character) {
         return presentCharacters.remove(character);
     }
 
-    public void maintain(){
+    public void maintain() {
         if (cleanliness == Cleanliness.BAD && presentCharacters.isEmpty()) {
             cleanliness = Cleanliness.GOOD;
             System.out.println("Le bâtiment a été nettoyé.");
@@ -49,26 +50,26 @@ public abstract class Building {
         }
     }
 
-    public void viewSpec(){
+    public void viewSpec() {
         System.out.println("Superficie : " + area + " m² | Capacité : " + capacity + " | Propreté : " + cleanliness + " | Occupants : " + presentCharacters.size());
         for (Character character : presentCharacters) {
             System.out.println(" - " + character.getName() + " (" + character.getClass().getSimpleName() + ")");
         }
     }
 
-    public int getPresenCharactersNumber() {
+    public int getPresentCharactersNumber() {
         return presentCharacters.size();
     }
 
-    public List<Character> getPresenCharacters() {
+    public List<Character> getPresentCharacters() {
         return Collections.unmodifiableList(presentCharacters);
     }
 
-    public Cleanliness getProprete(){
+    public Cleanliness getCleanliness() {
         return cleanliness;
     }
 
-    public void setProprete(Cleanliness cleanliness){
+    public void setCleanliness(Cleanliness cleanliness) {
         this.cleanliness = cleanliness;
     }
 
