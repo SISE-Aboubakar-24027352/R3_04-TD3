@@ -1,7 +1,6 @@
 package santavillage.building;
 
 import santavillage.exception.CapacityExceededException;
-import santavillage.building.Cleanliness;
 import santavillage.characters.Character;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,6 +13,12 @@ public abstract class Building {
     private List<Character> presentCharacters;
 
     public Building(double area, int capacity) {
+        if (area < 0) {
+            throw new IllegalArgumentException("La superficie ne peut pas etre negative.");
+        }
+        if (capacity < 0) {
+            throw new IllegalArgumentException("La capacite ne peut pas etre negative.");
+        }
         this.area = area;
         this.capacity = capacity;
         this.cleanliness = Cleanliness.GOOD;
@@ -29,11 +34,23 @@ public abstract class Building {
     }
 
     public void welcomed(Character character) {
+        if (character == null) {
+            throw new IllegalArgumentException("Le personnage ne peut pas etre nul.");
+        }
+        if (!canWelcome(character)) {
+            throw new IllegalArgumentException(
+                    "Ce personnage ne peut pas entrer dans " + getClass().getSimpleName() + "."
+            );
+        }
         if (presentCharacters.size() >= capacity) {
             throw new CapacityExceededException("Le bâtiment est complet.");
         }
         presentCharacters.add(character);
         System.out.println(character.getName() + " est entré dans le bâtiment.");
+    }
+
+    protected boolean canWelcome(Character character) {
+        return true;
     }
 
     public boolean withdraw(Character character){
