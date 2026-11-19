@@ -1,7 +1,7 @@
 package santavillage.building;
 
 import santavillage.exception.CapacityExceededException;
-import santavillage.building.Proprete;
+import santavillage.building.Cleanliness;
 import santavillage.characters.Character;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,13 +10,13 @@ import java.util.List;
 public abstract class Building {
     private final double area;
     private final int capacity;
-    private Proprete cleanliness;
+    private Cleanliness cleanliness;
     private List<Character> presentCharacters;
 
     public Building(double area, int capacity) {
         this.area = area;
         this.capacity = capacity;
-        this.cleanliness = Proprete.GOOD;
+        this.cleanliness = Cleanliness.GOOD;
         this.presentCharacters = new ArrayList<>();
     }
 
@@ -41,8 +41,8 @@ public abstract class Building {
     }
 
     public void maintain(){
-        if (cleanliness == Proprete.BAD && presentCharacters.isEmpty()) {
-            cleanliness = Proprete.GOOD;
+        if (cleanliness == Cleanliness.BAD && presentCharacters.isEmpty()) {
+            cleanliness = Cleanliness.GOOD;
             System.out.println("Le bâtiment a été nettoyé.");
         } else {
             System.out.println("Le bâtiment ne peut pas être entretenu : il doit être sale et vide.");
@@ -64,11 +64,11 @@ public abstract class Building {
         return Collections.unmodifiableList(presentCharacters);
     }
 
-    public Proprete getProprete(){
+    public Cleanliness getProprete(){
         return cleanliness;
     }
 
-    public void setProprete(Proprete cleanliness){
+    public void setProprete(Cleanliness cleanliness){
         this.cleanliness = cleanliness;
     }
 

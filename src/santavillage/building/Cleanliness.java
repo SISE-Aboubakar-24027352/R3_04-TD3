@@ -1,6 +1,6 @@
 package santavillage.building;
 
-public enum Proprete {
+public enum Cleanliness {
     BAD,
     CORRECT,
     GOOD
