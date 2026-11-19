@@ -1,4 +1,4 @@
-package santaClausVillage;
+package santavillage.characters;
 
 public abstract class Character {
 	private String name;
@@ -22,5 +22,9 @@ public abstract class Character {
 	
 	public void manipulateChristmasMagic(double change) {
 		christmasMagicIndicator = christmasMagicIndicator - change;
+	}
+
+	public String getName(){
+		return name;
 	}
 }

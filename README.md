@@ -2,4 +2,4 @@
 
 ## Village du Père Noël
 
-[Enoncé du TD](/td3-java-cas-pratique.md)
+[Enoncé du TD](/docs/td3-java-cas-pratique.md)
