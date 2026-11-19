@@ -2,6 +2,9 @@
 .git
 .idea
 .vscode
+.settings
+.project
+.classpath
 
 # Compiled class
 out/
