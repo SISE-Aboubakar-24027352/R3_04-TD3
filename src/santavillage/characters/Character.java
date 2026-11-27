@@ -24,7 +24,51 @@ public abstract class Character {
 		christmasMagicIndicator = christmasMagicIndicator - change;
 	}
 
-	public String getName(){
-		return name;
-	}
+    public double getChristmasMagicIndicator() {
+        return christmasMagicIndicator;
+    }
+
+    public void setChristmasMagicIndicator(double christmasMagicIndicator) {
+        this.christmasMagicIndicator = christmasMagicIndicator;
+    }
+
+    public boolean isState() {
+        return state;
+    }
+
+    public void setState(boolean state) {
+        this.state = state;
+    }
+
+    public double getHungerIndicator() {
+        return hungerIndicator;
+    }
+
+    public void setHungerIndicator(double hungerIndicator) {
+        this.hungerIndicator = hungerIndicator;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
